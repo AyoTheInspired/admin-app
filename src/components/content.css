@@ -1,0 +1,156 @@
+.dropdown__header {
+	background: transparent !important;
+}
+
+.dropdown__header:active {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.header__left-text {
+	font-size: 21px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.header__mid-text {
+	font-size: 15px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	font-style: bold;
+}
+
+.header__right-icon {
+	border-radius: 5px;
+}
+
+.overview__container {
+	background: #fff;
+	border-radius: 5px;
+}
+
+.overview__icon {
+	font-size: 35px;
+	margin-right: 15px;
+}
+
+.overview__figure {
+	font-size: 21px;
+	font-style: bold;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.overview__text,
+.feed__msg {
+	font-size: 14px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+/* DAILY FEED SECTION */
+
+.feed__title {
+	font-size: 16px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.feed__container {
+	border-bottom: 1px solid #eee;
+}
+
+.feed__time-below {
+	font-size: 11.2px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	display: block;
+}
+
+.feed__detail {
+	font-size: 12px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	border: 1px solid gray;
+}
+
+.feed__image {
+	border-radius: 50%;
+}
+
+.feed__time-badge {
+	font-size: 12px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	font-weight: normal !important;
+}
+
+/* TRIO CHARTS */
+
+.chart__header-left {
+	font-size: 16px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.doughnut__wrap {
+	max-height: 200px;
+	max-width: 200px;
+}
+
+.sale__source {
+	font-size: 14px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.notification__wrap {
+	background: #f8f9fa;
+}
+
+.notification__msg {
+	font-size: 24.5px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	color: #000000;
+}
+
+.notification__detail {
+	color: #495057;
+	font-size: 12px;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.schedule__container {
+	border-left: 2px solid #afb1b4;
+	background: #eee;
+}
+
+.schedule__left,
+.schedule__detail,
+.projects__table-title,
+.project__title,
+.project__assignee,
+.project__startDate,
+.project__endDate {
+	font-size: 14px;
+	color: #495057;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+.schedule__right {
+	font-size: 12px;
+	color: #737d85;
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+/* FOR LATEST PROJECTS */
+
+.project__table-title {
+	font-style: normal;
+	font-size: 50px;
+}

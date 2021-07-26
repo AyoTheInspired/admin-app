@@ -1,0 +1,35 @@
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+
+:root {
+	--dark-ppl: #0f0326;
+	--light-ppl: #1b0346;
+	--sidebar-bg: #293042;
+	--sidebar-ft: #222a37;
+	--body-bg: #f7f9fc;
+	/* --light-ppl: ##1f618d; */
+	--bby-blue: #92bcea;
+	--pale-gray: #eaeaea;
+	--pale-2: #6c757d;
+	/* TRANSITIONS */
+	--sht-trans: all 200ms ease-in-out;
+	--med-trans: all 0.5s ease-in-out;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.flexed {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav {
+	background: var(--light-ppl);
+	background: #ffffff;
+	box-shadow: 0px 1px 15px #777;
+}
