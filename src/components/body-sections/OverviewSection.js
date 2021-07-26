@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { FiFilter, FiRefreshCw } from "react-icons/fi";
 import styled from "styled-components";
 import { overviewInfo } from "../../appData";
+import { SidebarContext } from "../SidebarContext";
 
 function OverviewSection() {
+	const [appData, setAppData] = useContext(SidebarContext);
+
 	return (
 		<Wrap className="col-lg my-2 px-0">
 			<div className="section__header col d-flex flex-wrap justify-content-between align-items-center pt-4 my-3">
@@ -56,6 +59,28 @@ function OverviewSection() {
 					);
 				})}
 			</div>
+
+			<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
+				<h3 className="text-white text-center static__header">
+					{`${appData.staticHeader}`}
+				</h3>
+				<h5 className="text-warning text-center static__content">
+					{`${appData.staticContent}`}
+				</h5>
+
+				{appData.sideItemClicked && (
+					<p className="mb-0 text-success text-center">
+						Lorem ipsum{" "}
+						<span className="text-warning">{appData.staticContent}</span>, sit
+						amet consectetur adipisicing elit. Blanditiis numquam eos odio saepe
+						accusamus, sed nemo quae sequi unde consequatur sint, quam magnam
+						perspiciatis voluptatem exercitationem cum eius asperiores itaque
+						aliquid inventore, nihil animi incidunt! Inventore alias nobis quas.
+						Vel corrupti nulla minima, eligendi veniam suscipit. Obcaecati ipsum
+						delectus corporis.
+					</p>
+				)}
+			</div>
 		</Wrap>
 	);
 }
@@ -64,6 +89,8 @@ export default OverviewSection;
 
 const Wrap = styled.section`
 	display: block;
-`;
 
-// <img src="/static/media/avatar.d7185574.jpg" width="36" height="36" class="rounded-circle mr-2" alt="Chris Wood"></img>
+	.static__wrapper {
+		/* padding: 50px !important; */
+	}
+`;

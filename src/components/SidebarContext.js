@@ -4,8 +4,15 @@ export const SidebarContext = createContext();
 
 export const SidebarProvider = (props) => {
 	const [showSidebar, setShowSidebar] = useState(false);
+	const [appData, setAppData] = useState({
+		sideItemClicked: false,
+		staticHeader: "Here's a static Header.",
+		staticContent:
+			"... And some static content underneath... select a sidebar item to see dynamic changes.",
+	});
 	return (
-		<SidebarContext.Provider value={[showSidebar, setShowSidebar]}>
+		<SidebarContext.Provider
+			value={([showSidebar, setShowSidebar], [appData, setAppData])}>
 			{props.children}
 		</SidebarContext.Provider>
 	);
