@@ -7,6 +7,7 @@ import { SidebarContext } from "../SidebarContext";
 
 function OverviewSection() {
 	const [appData, setAppData] = useContext(SidebarContext);
+	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
 
 	return (
 		<Wrap className="col-lg my-2 px-0">
@@ -60,27 +61,29 @@ function OverviewSection() {
 				})}
 			</div>
 
-			<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
-				<h3 className="text-white text-center static__header">
-					{`${appData.staticHeader}`}
-				</h3>
-				<h5 className="text-warning text-center static__content">
-					{`${appData.staticContent}`}
-				</h5>
+			{showSidebar && (
+				<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
+					<h3 className="text-white text-center static__header">
+						{appData.staticHeader || "Open the Sidebar to see changes"}
+					</h3>
+					<h5 className="text-warning text-center static__content">
+						{appData.staticContent || "Select an item or sub-item..."}
+					</h5>
 
-				{appData.sideItemClicked && (
-					<p className="mb-0 text-success text-center">
-						Lorem ipsum{" "}
-						<span className="text-warning">{appData.staticContent}</span>, sit
-						amet consectetur adipisicing elit. Blanditiis numquam eos odio saepe
-						accusamus, sed nemo quae sequi unde consequatur sint, quam magnam
-						perspiciatis voluptatem exercitationem cum eius asperiores itaque
-						aliquid inventore, nihil animi incidunt! Inventore alias nobis quas.
-						Vel corrupti nulla minima, eligendi veniam suscipit. Obcaecati ipsum
-						delectus corporis.
-					</p>
-				)}
-			</div>
+					{appData.sideItemClicked && (
+						<p className="mb-0 text-success text-center">
+							Lorem ipsum{" "}
+							<span className="text-warning">{appData.staticContent}</span>, sit
+							amet consectetur adipisicing elit. Blanditiis numquam eos odio
+							saepe accusamus, sed nemo quae sequi unde consequatur sint, quam
+							magnam perspiciatis voluptatem exercitationem cum eius asperiores
+							itaque aliquid inventore, nihil animi incidunt! Inventore alias
+							nobis quas. Vel corrupti nulla minima, eligendi veniam suscipit.
+							Obcaecati ipsum delectus corporis.
+						</p>
+					)}
+				</div>
+			)}
 		</Wrap>
 	);
 }

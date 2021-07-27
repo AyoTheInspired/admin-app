@@ -27,7 +27,7 @@ function Sidebar() {
 				<StatusContainer
 					showSidebar={showSidebar}
 					fluid
-					className="user__wrap mt-4 px-0 py-2 d-lg-block">
+					className="user__wrap px-0 pt-2 d-lg-block">
 					<div className="user__container flexed">
 						<div className="user__img-div  pl-2 pr-1 flexed">
 							<img

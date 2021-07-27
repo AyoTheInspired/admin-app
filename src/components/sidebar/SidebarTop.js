@@ -65,7 +65,7 @@ function SidebarTop() {
 													});
 												}}
 												className="sidebar__item-child my-2"
-												key={id}>
+												key={id + 1}>
 												<a>{child}</a>
 											</li>
 										))}

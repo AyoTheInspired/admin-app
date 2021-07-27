@@ -10,6 +10,7 @@ import { SidebarContext } from "./SidebarContext";
 function Navigation() {
 	const [mobileView, setMobileView] = useState(false);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
+	const [appData, setAppData] = useContext(SidebarContext);
 
 	window.addEventListener("resize", function () {
 		if (window.innerWidth <= 768) {
@@ -26,7 +27,9 @@ function Navigation() {
 							<div className="flexed">
 								{showSidebar ? (
 									<FaTimes
-										onClick={() => setShowSidebar(!showSidebar)}
+										onClick={() => {
+											setShowSidebar(!showSidebar);
+										}}
 										className="sidebar__toggle mr-2"
 									/>
 								) : (

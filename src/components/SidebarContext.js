@@ -5,6 +5,7 @@ export const SidebarContext = createContext();
 export const SidebarProvider = (props) => {
 	const [showSidebar, setShowSidebar] = useState(false);
 	const [appData, setAppData] = useState({
+		sidebarOpen: false,
 		sideItemClicked: false,
 		staticHeader: "Here's a static Header.",
 		staticContent:

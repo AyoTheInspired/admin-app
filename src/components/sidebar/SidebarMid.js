@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { sidebarMidInfo } from "../../appData";
 import "./sidebarStyles.css";
 import { Badge, Accordion, Card } from "react-bootstrap";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { uid } from "react-uid";
+import { SidebarContext } from "../SidebarContext";
 
 function SidebarMid() {
+	const [appData, setAppData] = useContext(SidebarContext);
 	return (
 		<Wrap className="px-3">
 			<h6 className="mb-1 mt-2 text-white main__title">Tools & Components</h6>
@@ -23,7 +25,14 @@ function SidebarMid() {
 									eventKey={title}
 									key={uid(title)}
 									className="sidebar-toggle d-flex justify-content-between align-items-center px-0 py-1">
-									<div className="sidebar__item-a">
+									<div
+										className="sidebar__item-a"
+										onClick={() => {
+											setAppData({
+												...appData,
+												staticHeader: title,
+											});
+										}}>
 										<span className="sidebar__title-icon mr-2">{icon}</span>
 										<h6 className="mb-0 sub__title mt-2"> {title} </h6>
 									</div>
@@ -46,7 +55,16 @@ function SidebarMid() {
 								<Accordion.Collapse eventKey={title}>
 									<Card.Body className="accordion__body py-0">
 										{children?.map((child, id) => (
-											<li className="sidebar__item-child my-2">
+											<li
+												onClick={() => {
+													setAppData({
+														...appData,
+														sideItemClicked: true,
+														staticContent: child,
+													});
+												}}
+												key={id + 1}
+												className="sidebar__item-child my-2">
 												<a>{child}</a>
 											</li>
 										))}
