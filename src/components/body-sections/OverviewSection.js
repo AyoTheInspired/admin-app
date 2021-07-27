@@ -92,8 +92,4 @@ export default OverviewSection;
 
 const Wrap = styled.section`
 	display: block;
-
-	.static__wrapper {
-		/* padding: 50px !important; */
-	}
 `;
