@@ -7,9 +7,9 @@ export const SidebarProvider = (props) => {
 	const [appData, setAppData] = useState({
 		sidebarOpen: false,
 		sideItemClicked: false,
-		staticHeader: "Here's a static Header.",
+		staticHeader: "Here's a static Header",
 		staticContent:
-			"... And some static content underneath... select a sidebar item to see dynamic changes.",
+			"... And some static content... select a sidebar item to see dynamic changes.",
 	});
 	return (
 		<SidebarContext.Provider

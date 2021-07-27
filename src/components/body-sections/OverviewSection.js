@@ -64,10 +64,10 @@ function OverviewSection() {
 			{showSidebar && (
 				<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
 					<h3 className="text-white text-center static__header">
-						{appData.staticHeader || "Open the Sidebar to see changes"}
+						{appData.staticHeader || "Select a Sidebar item"}
 					</h3>
 					<h5 className="text-warning text-center static__content">
-						{appData.staticContent || "Select an item or sub-item..."}
+						{appData.staticContent || "... and then a sub-item"}
 					</h5>
 
 					{appData.sideItemClicked && (
