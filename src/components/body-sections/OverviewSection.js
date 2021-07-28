@@ -6,7 +6,7 @@ import { overviewInfo } from "../../appData";
 import { SidebarContext } from "../SidebarContext";
 
 function OverviewSection() {
-	const [appData, setAppData, staticHeader, staticContent] =
+	const [appData, setAppData, staticHeader, staticContent, sideItemClicked] =
 		useContext(SidebarContext);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
 
@@ -65,10 +65,10 @@ function OverviewSection() {
 			{showSidebar && (
 				<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
 					<h3 className="text-white text-center static__header">
-						{staticHeader || "Select a Sidebar item"}
+						{appData.staticHeader || "Select a Sidebar item"}
 					</h3>
 					<h5 className="text-warning text-center static__content">
-						{staticContent || "... and then a sub-item"}
+						{appData.staticContent || "... and then a sub-item"}
 					</h5>
 
 					{appData.sideItemClicked && (
