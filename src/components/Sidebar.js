@@ -77,9 +77,9 @@ const StatusContainer = styled.div`
 	bottom: 0 !important; */
 	margin-left: ${({ showSidebar }) => (showSidebar ? "0" : "-250px")};
 
-	.status__circle {
+	/* .status__circle {
 		color: red;
-	}
+	} */
 `;
 
 // https://appstack-react.bootlab.io/dashboard/default
