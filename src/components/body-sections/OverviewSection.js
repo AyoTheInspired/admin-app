@@ -4,17 +4,22 @@ import { FiFilter, FiRefreshCw } from "react-icons/fi";
 import styled from "styled-components";
 import { overviewInfo } from "../../appData";
 import { SidebarContext } from "../SidebarContext";
+import { useStateValue } from "../global-state/StateProvider";
 
 function OverviewSection() {
 	const [appData, setAppData, staticHeader, staticContent, sideItemClicked] =
 		useContext(SidebarContext);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
+	const [{ user }, dispatch] = useStateValue();
 
 	return (
 		<Wrap className="col-lg my-2 px-0">
 			<div className="section__header col d-flex flex-wrap justify-content-between align-items-center pt-4 my-3">
 				<div className="section__header-left mx-auto mt-2">
-					<h4 className=" mb-0 header__left-text">Welcome back, Ayo!</h4>
+					<h4 className=" mb-0 header__left-text">
+						Welcome back, &nbsp;
+						<span className="user__name">{user.displayName}</span> !
+					</h4>
 				</div>
 				<div className="flexed mx-auto mt-2">
 					<h5 className="header__mid-text mb-0 mr-2">
