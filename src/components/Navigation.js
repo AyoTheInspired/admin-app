@@ -6,17 +6,27 @@ import { uid } from "react-uid";
 import styled from "styled-components";
 import ReactTooltip from "react-tooltip";
 import { SidebarContext } from "./SidebarContext";
+import { useStateValue } from "./global-state/StateProvider";
+import actionTypes from "./global-state/reducer";
 
 function Navigation() {
 	const [mobileView, setMobileView] = useState(false);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
 	const [appData, setAppData] = useContext(SidebarContext);
+	const [{ user }, dispatch] = useStateValue();
 
 	window.addEventListener("resize", function () {
 		if (window.innerWidth <= 768) {
 			setMobileView(true);
 		} else setMobileView(false);
 	});
+
+	const signOut = () => {
+		dispatch({
+			type: actionTypes.LOGOUT_USER,
+		});
+		console.log({ user });
+	};
 
 	return (
 		<>
@@ -83,7 +93,7 @@ function Navigation() {
 									? "logout-div p-2 col-6 mx-auto"
 									: "logout-div  flexed p-2 pl-3 text-white"
 							}>
-							<h6 className="mb-0 text-center">
+							<h6 className="mb-0 text-center" onClick={signOut}>
 								<span className="mr-2">
 									<FaSignOutAlt />
 								</span>

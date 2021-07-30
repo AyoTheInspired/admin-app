@@ -13,7 +13,6 @@ function Login() {
 		auth
 			.signInWithPopup(provider)
 			.then((result) => {
-				console.log(result);
 				dispatch({
 					type: actionTypes.SET_USER,
 					user: result.user,
@@ -32,7 +31,7 @@ function Login() {
 						<div className="login__text mb-3">
 							<h1 className="mb-2 login__main">Hello Admin,</h1>
 
-							<h5 className="login__add mb-0">Please Sign In below</h5>
+							{/* <h5 className="login__add mb-0">Please Sign In below</h5> */}
 						</div>
 
 						<Button className="btn-success" onClick={signIn}>

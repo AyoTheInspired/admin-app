@@ -18,7 +18,7 @@ function OverviewSection() {
 				<div className="section__header-left mx-auto mt-2">
 					<h4 className=" mb-0 header__left-text">
 						Welcome back, &nbsp;
-						<span className="user__name">{user.displayName}</span> !
+						<span className="user__name">{user?.displayName}</span> !
 					</h4>
 				</div>
 				<div className="flexed mx-auto mt-2">
@@ -98,4 +98,10 @@ export default OverviewSection;
 
 const Wrap = styled.section`
 	display: block;
+
+	.user__name {
+		color: green;
+		font-size: inherit;
+		font-weight: 700;
+	}
 `;

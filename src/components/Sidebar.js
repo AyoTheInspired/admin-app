@@ -6,11 +6,13 @@ import SidebarTop from "./sidebar/SidebarTop";
 import { SidebarContext } from "./SidebarContext";
 import { GrStatusGoodSmall } from "react-icons/gr";
 import { FiBox } from "react-icons/fi";
+import { useStateValue } from "./global-state/StateProvider";
 
 import "./sidebar/sidebarStyles.css";
 
 function Sidebar() {
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
+	const [{ user }] = useStateValue();
 
 	return (
 		<>
@@ -31,7 +33,7 @@ function Sidebar() {
 					<div className="user__container flexed">
 						<div className="user__img-div  pl-2 pr-1 flexed">
 							<img
-								src="./user.jpg"
+								src={user?.photoURL}
 								alt=""
 								className="ml-auto mx-2"
 								height="40"
@@ -39,7 +41,7 @@ function Sidebar() {
 							/>
 						</div>
 						<div className="user__details py-2 px-0  text-white mr-auto">
-							<h5 className="user__name mb-1">Ayo Abimbola</h5>
+							<h5 className="user__name mb-1">{user?.displayName}</h5>
 							<h6 className="mb-0 user__status">
 								<span className="status__circle mr-2">
 									<GrStatusGoodSmall />
