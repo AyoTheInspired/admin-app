@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Home from "./Home";
 
 function App() {
-	const [{ user }, dispatch] = useStateValue();
+	const [{ user }, isAuth, dispatch] = useStateValue();
 
 	return (
 		<div className="App">

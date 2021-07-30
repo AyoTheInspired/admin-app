@@ -8,6 +8,7 @@ import ReactTooltip from "react-tooltip";
 import { SidebarContext } from "./SidebarContext";
 import { useStateValue } from "./global-state/StateProvider";
 import actionTypes from "./global-state/reducer";
+import firebase from "firebase";
 
 function Navigation() {
 	const [mobileView, setMobileView] = useState(false);
@@ -22,10 +23,11 @@ function Navigation() {
 	});
 
 	const signOut = () => {
+		firebase.auth().signOut();
 		dispatch({
 			type: actionTypes.LOGOUT_USER,
+			user: user,
 		});
-		console.log({ user });
 	};
 
 	return (
@@ -93,12 +95,12 @@ function Navigation() {
 									? "logout-div p-2 col-6 mx-auto"
 									: "logout-div  flexed p-2 pl-3 text-white"
 							}>
-							<h6 className="mb-0 text-center" onClick={signOut}>
+							{/* <h6 className="mb-0 text-center" onClick={signOut}>
 								<span className="mr-2">
 									<FaSignOutAlt />
 								</span>
 								Sign Out
-							</h6>
+							</h6> */}
 						</div>
 					</Navbar.Collapse>
 				</Navbar>
@@ -175,7 +177,7 @@ const Wrap = styled.div`
 
 	& .logout-div {
 		cursor: pointer;
-		border-left: 1px solid var(--bby-blue);
+		/* border-left: 1px solid var(--bby-blue); */
 	}
 
 	& .nav__form,

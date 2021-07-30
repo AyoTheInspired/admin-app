@@ -35,7 +35,7 @@ function Sidebar() {
 							<img
 								src={user?.photoURL}
 								alt=""
-								className="ml-auto mx-2"
+								className="ml-auto mx-2 user__img"
 								height="40"
 								width="40"
 							/>
@@ -75,13 +75,11 @@ const StatusContainer = styled.div`
 	min-width: 250px;
 	max-width: 250px;
 	transition: var(--sht-trans);
-	/* left: 0 !important;
-	bottom: 0 !important; */
 	margin-left: ${({ showSidebar }) => (showSidebar ? "0" : "-250px")};
 
-	/* .status__circle {
-		color: red;
-	} */
+	.user__img {
+		object-fit: contain;
+	}
 `;
 
 // https://appstack-react.bootlab.io/dashboard/default
