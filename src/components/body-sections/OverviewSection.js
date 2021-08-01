@@ -17,7 +17,7 @@ function OverviewSection() {
 			<div className="section__header col d-flex flex-wrap justify-content-between align-items-center pt-4 my-3">
 				<div className="section__header-left mx-auto mt-2">
 					<h4 className=" mb-0 header__left-text">
-						Welcome back, &nbsp;
+						Welcome back,&nbsp;
 						<span className="user__name">{user?.displayName}</span> !
 					</h4>
 				</div>
