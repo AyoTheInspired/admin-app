@@ -11,7 +11,7 @@ import { useStateValue } from "./global-state/StateProvider";
 import "./sidebar/sidebarStyles.css";
 
 function Sidebar() {
-	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
+	const [showSidebar] = useContext(SidebarContext);
 	const [{ user }] = useStateValue();
 
 	return (

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Navbar, Nav, Badge, Form, FormControl } from "react-bootstrap";
-import { FaBars, FaSignOutAlt, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { navInfo } from "../appData";
 import { uid } from "react-uid";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ import firebase from "firebase";
 function Navigation() {
 	const [mobileView, setMobileView] = useState(false);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
-	const [appData, setAppData] = useContext(SidebarContext);
+
 	const [{ user }, dispatch] = useStateValue();
 
 	window.addEventListener("resize", function () {
@@ -22,13 +22,13 @@ function Navigation() {
 		} else setMobileView(false);
 	});
 
-	const signOut = () => {
-		firebase.auth().signOut();
-		dispatch({
-			type: actionTypes.LOGOUT_USER,
-			user: user,
-		});
-	};
+	// const signOut = () => {
+	// 	firebase.auth().signOut();
+	// 	dispatch({
+	// 		type: actionTypes.LOGOUT_USER,
+	// 		user: user,
+	// 	});
+	// };
 
 	return (
 		<>

@@ -33,7 +33,7 @@ function ProjectsTable() {
 								assignee,
 							} = info;
 							return (
-								<tr>
+								<tr key={title}>
 									<td className="project__title"> {title} </td>
 									<td className="project__startDate"> {startDate} </td>
 									<td className="project__endDate"> {endDate} </td>

@@ -6,7 +6,7 @@ import Content from "./Content";
 import { SidebarContext } from "./SidebarContext";
 
 function Body() {
-	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
+	const [showSidebar] = useContext(SidebarContext);
 	return (
 		<>
 			<Container fluid className="px-0">

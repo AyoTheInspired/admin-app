@@ -5,12 +5,12 @@ import { useStateValue } from "./components/global-state/StateProvider";
 import Login from "./components/Login";
 
 import Home from "./Home";
-import { useEffect } from "react";
-import { auth } from "./components/firebase";
-import { actionTypes } from "./components/global-state/reducer";
+// import { useEffect } from "react";
+// import { auth } from "./components/firebase";
+// import { actionTypes } from "./components/global-state/reducer";
 
 function App() {
-	const [{ user }, isAuth, dispatch] = useStateValue();
+	const [{ user }] = useStateValue();
 
 	// useEffect(() => {
 	// 	auth.onAuthStateChanged((userAuth) => {

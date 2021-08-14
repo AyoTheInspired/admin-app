@@ -69,7 +69,9 @@ function OverviewSection() {
 				{overviewInfo.map((info) => {
 					const { icon, iconColor, figure, text } = info;
 					return (
-						<div className="overview__container mx-2 py-4 my-2 col-sm-5 col-md-5 col-lg flexed">
+						<div
+							key={iconColor}
+							className="overview__container mx-2 py-4 my-2 col-sm-5 col-md-5 col-lg flexed">
 							<span className={`${iconColor} overview__icon`}> {icon} </span>
 							<div className="overview__detail d-flex flex-column justify-content-between mr-auto">
 								<h5 className="overview__figure mb-2">{figure}</h5>
