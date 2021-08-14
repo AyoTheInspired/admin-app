@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { FiFilter, FiRefreshCw } from "react-icons/fi";
 import styled from "styled-components";
@@ -11,6 +11,19 @@ function OverviewSection() {
 		useContext(SidebarContext);
 	const [showSidebar, setShowSidebar] = useContext(SidebarContext);
 	const [{ user }, dispatch] = useStateValue();
+
+	useEffect(() => {
+		const data = localStorage.getItem("app-state");
+
+		if (data) {
+			setAppData(JSON.parse(data));
+		}
+	}, []);
+
+	// Save state
+	useEffect(() => {
+		localStorage.setItem("app-state", JSON.stringify(appData));
+	}, [appData]);
 
 	return (
 		<Wrap className="col-lg my-2 px-0">
@@ -66,11 +79,10 @@ function OverviewSection() {
 					);
 				})}
 			</div>
-
 			{showSidebar && (
 				<div className="bg-dark col mx-auto static__wrapper py-4 px-5">
 					<h3 className="text-white text-center static__header">
-						{appData.staticHeader || "Select a Sidebar item"}
+						{appData.staticHeader || "Select a sidebar item"}
 					</h3>
 					<h5 className="text-warning text-center static__content">
 						{appData.staticContent || "... and then a sub-item"}

@@ -5,9 +5,25 @@ import { useStateValue } from "./components/global-state/StateProvider";
 import Login from "./components/Login";
 
 import Home from "./Home";
+import { useEffect } from "react";
+import { auth } from "./components/firebase";
+import { actionTypes } from "./components/global-state/reducer";
 
 function App() {
 	const [{ user }, isAuth, dispatch] = useStateValue();
+
+	// useEffect(() => {
+	// 	auth.onAuthStateChanged((userAuth) => {
+	// 		// if (userAuth) {
+	// 		// 	dispatch({
+	// 		// 		type: actionTypes.SET_USER,
+	// 		// 		payload: userAuth,
+	// 		// 	});
+	// 		// } else {
+	// 		// 	return;
+	// 		// }
+	// 	});
+	// });
 
 	return (
 		<div className="App">

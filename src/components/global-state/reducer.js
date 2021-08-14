@@ -13,13 +13,11 @@ export const reducer = (state, action) => {
 		case actionTypes.SET_USER:
 			return {
 				...state,
-				user: action.user,
+				user: action.payload,
 			};
 
 		case actionTypes.LOGOUT_USER:
-			return {
-				user: null,
-			};
+			return { ...state, user: null };
 
 		default:
 			return state;
